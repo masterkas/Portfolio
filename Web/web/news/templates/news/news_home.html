@@ -1,0 +1,23 @@
+{% extends 'app/layout.html' %}
+{% block title %}Объявления{% endblock %}
+{% block content %}
+
+   <div class="features">
+
+
+       <h1>Объявления на сайте</h1>
+       {% for el in news %}
+            <div class="alert alert-warning">
+                <div><img src="{{ el.image.url }}" width="100" height="100"></div>
+                <div>
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.date }}</p>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'news_one' el.id %}" class="btn btn-outline-success" >Подробнее</a>
+                </div>
+            </div>
+       {% endfor %}
+
+   </div>
+
+{% endblock %}

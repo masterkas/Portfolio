@@ -1,0 +1,26 @@
+{% extends 'app/layout.html' %}
+{% block title %}Добавление нового объявления{% endblock %}
+{% block content %}
+
+   <div class="features">
+
+        <h1>Добавление нового объявления</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.image }}<br>
+            {{ form.full_text }}<br>
+            {{ form.name }}<br>
+            {{ form.email }}<br>
+            {{ form.tel }}<br>
+
+            <button class="btn btn-success" type="submit">Добавить объявление</button>
+
+
+        </form>
+
+
+   </div>
+
+{% endblock %}
