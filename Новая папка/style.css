@@ -1,0 +1,54 @@
+.container {
+  position: absolute;
+  width: 1320px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: cornflowerblue;
+}
+.header div {
+  margin: 5px;
+}
+.content {
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer {
+  background-color: rosybrown;
+}
+.menu {
+  background-color: bisque;
+  flex-grow: 1;
+}
+.post {
+  background-color: aqua;
+  flex-grow: 4;
+}
+.nav {
+  font-size: 20pt;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav li {
+  list-style-type: none;
+  display: inline;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.but {
+  font-size: 25px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+img {
+  border-radius: 10px;
+  border: solid 2px black;
+}

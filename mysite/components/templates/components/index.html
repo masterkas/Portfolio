@@ -1,0 +1,17 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<p>Привет! Это твоя первая главная страница</p>
+    <ul>
+        {% for c in comp %}
+        <li>
+            <h1>{{ c.name }}</h1>
+            <p>{{ c.description }}</p>
+            <p>{{ c.time_create }}</p>
+        </li><Br>
+        <button type="button"><a href="{{ c.get_absolute_url }}">Смотреть объявление</a></button>
+        <hr>
+        {% endfor %}
+    </ul>
+{% endblock content %}
