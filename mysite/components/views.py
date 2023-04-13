@@ -1,12 +1,13 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render
-from .models import *
+from .models import Components, Category
 
 menu = [
-    {'title': "Главная страница", 'url_name': 'home'},
-    {'title': "Обо мне", 'url_name': 'about'},
-    {'title': "Добавить объявление", 'url_name': 'add_post'},
+
+    {'title': "О сайте", 'url_name': 'about'},
     {'title': "Контакты", 'url_name': 'contacts'},
+    {'title': "Об авторе", 'url_name': 'about_me'},
+    {'title': "Добавить объявление", 'url_name': 'add_post'},
     {'title': "Войти", 'url_name': 'login'},
 
 ]
@@ -14,11 +15,14 @@ menu = [
 
 def index(request):
     comp = Components.objects.all()
+    cats = Category.objects.all()
+
     context = {
         'comp': comp,
+        'cats': cats,
         'menu': menu,
-        'title': 'Главная страница'
-
+        'title': 'Главная страница',
+        'cat_selected': 0
     }
     return render(request, 'components/index.html', context=context)
 
@@ -26,11 +30,14 @@ def index(request):
 def about(request):
     return render(request, 'components/about.html', {'menu': menu, 'title': 'Обо мне'})
 
-def add_post(request):
-    return HttpResponse('Добавить объявление')
-
 def contacts(request):
     return HttpResponse('Как со мной связаться')
+
+def about_me(request):
+    return HttpResponse('Обо мне')
+
+def add_post(request):
+    return HttpResponse('Добавить объявление')
 
 def login(request):
     return HttpResponse('Страница авторизации')
@@ -40,12 +47,22 @@ def show_post(request, post_id):
     return HttpResponse(f'Страница объявления {post_id}')
 
 
+def show_category(request, cat_id):
+    comp = Components.objects.filter(cat_id=cat_id)
+    cats = Category.objects.all()
+    if len(comp) == 0:
+        raise Http404()
+
+    context = {
+        'comp': comp,
+        'cats': cats,
+        'menu': menu,
+        'title': 'Отображение по рубрикам',
+        'cat_selected': cat_id
+    }
+    return render(request, 'components/index.html', context=context)
 
 
+def pagenotfound(request, exception):
+    return HttpResponseNotFound('<h1>СТРАНИЦА НЕ НАЙДЕНА</h1>')
 
-def categories(request):
-    return HttpResponse('<h1>Привет! Здесь можно выбрать категорию товара</h1>')
-
-
-def categories_id(request, cat_id):
-    return HttpResponse(f'<h1>Привет! Вы находитесь в категории {cat_id}</h1>')

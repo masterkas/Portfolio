@@ -1,11 +1,14 @@
-{% extends 'components/base.html' %}
+{% extends 'components/base2.html' %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<p>Привет! Это твоя первая главная страница</p>
     <ul>
         {% for c in comp %}
         <li>
+            <div class="p_inlane">
+                <p>Категория: {{c.cat}}</p>
+                <p>Дата: {{ c.time_upgrate|date:'d-m-y H:i:s' }}</p>
+            </div>
+            <p></p>
             <h1>{{ c.name }}</h1>
             <p>{{ c.description }}</p>
             <p>{{ c.time_create }}</p>

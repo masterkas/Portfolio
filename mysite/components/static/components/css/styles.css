@@ -1,9 +1,67 @@
-body {
-  background-color: rgb(156, 15, 65);
-  color: rgb(2, 2, 2);
+.container {
+  position: absolute;
+  width: 1320px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
-.table-page {
-  width: 100%;
-  height: 100%;
-  vertical-align: top;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: cornflowerblue;
+}
+.header div {
+  margin: 5px;
+}
+.content {
+  background-color: blueviolet;
+  display: flex;
+
+  align-items: stretch
+  justify-content: space-between;
+}
+.footer {
+  background-color: rosybrown;
+}
+.menu {
+  background-color: bisque;
+  flex-grow: 1;
+}
+.menu a {
+  text-decoration: none;
+}
+.post {
+  background-color: aqua;
+  flex-grow: 4;
+}
+.nav {
+    display: flex;
+    font-size: 20pt;
+
+  flex-direction: row;
+  align-items: center;
+}
+}
+.nav a {
+  text-decoration: none;
+}
+.nav li {
+  list-style-type: none;
+
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.but {
+  font-size: 25px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+img {
+  border-radius: 10px;
+  border: solid 2px black;
+}
+.p_inlane{
+    display: flex;
+    justify-content: space-between;
 }
