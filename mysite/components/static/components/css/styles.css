@@ -1,67 +1,121 @@
 .container {
-  position: absolute;
-  width: 1320px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+    position: absolute;
+    width: 1320px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: cornflowerblue;
-}
-.header div {
-  margin: 5px;
-}
-.content {
-  background-color: blueviolet;
-  display: flex;
 
-  align-items: stretch
-  justify-content: space-between;
+.header {
+    background-image:url("banner.jpg")
 }
-.footer {
-  background-color: rosybrown;
+
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 0
 }
+
+.nav a{
+    text-decoration: none;
+    color: rgb(211, 197, 214);
+    font-size: 35px;
+}
+
+.nav a:hover {
+    color: brown;
+}
+
+.content{
+    display: flex;
+}
+
 .menu {
-  background-color: bisque;
-  flex-grow: 1;
+    border-right: solid 3px coral;
+    background-color: #838487;
+    flex-grow: 0;
+    padding-right: 20px;
+    margin: 0;
 }
 .menu a {
-  text-decoration: none;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
 }
+.menu a:hover {
+    color: brown;
+}
+
+
+.menu ul {
+    list-style-type: none;
+    margin: 40px 0 0 0;
+}
+
+.menu li{
+    margin: 40px 0
+}
+
+.sel{
+    font-size: 25px;
+    color: coral;
+}
+
+
 .post {
-  background-color: aqua;
-  flex-grow: 4;
-}
-.nav {
-    display: flex;
-    font-size: 20pt;
 
-  flex-direction: row;
-  align-items: center;
-}
-}
-.nav a {
-  text-decoration: none;
-}
-.nav li {
-  list-style-type: none;
+  flex-grow: 1;
+  margin: 0;
 
-  margin-left: 15px;
-  margin-right: 15px;
 }
-.but {
-  font-size: 25px;
-  background-color: bisque;
-  border-radius: 10px;
+
+.post ul {
+    padding: 0;
+    list-style-type: none;
+    padding: 0 30px;
+
+
 }
-img {
-  border-radius: 10px;
-  border: solid 2px black;
-}
-.p_inlane{
+
+
+
+.p_inline{
     display: flex;
     justify-content: space-between;
+    background-color: bisque;
+    border-bottom:solid 3px coral;
 }
+
+button.more {
+    text-align: center;
+    background-color: #ECDB54;
+    border-radius: 5px
+
+}
+
+button.more:hover {
+    background-color: #6F9FD8;
+
+
+}
+
+
+
+.more a{
+    color: #6F9FD8;
+    text-decoration: none;
+}
+
+.more a:hover{
+    color: #ECDB54;
+
+}
+
+
+
+
+
+

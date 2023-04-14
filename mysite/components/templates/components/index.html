@@ -1,20 +1,20 @@
-{% extends 'components/base2.html' %}
+{% extends 'components/base.html' %}
 
 {% block content %}
-    <ul>
+    <ul class="">
         {% for c in comp %}
         <li>
-            <div class="p_inlane">
+            <div class="p_inline">
                 <p>Категория: {{c.cat}}</p>
                 <p>Дата: {{ c.time_upgrate|date:'d-m-y H:i:s' }}</p>
             </div>
-            <p></p>
+
             <h1>{{ c.name }}</h1>
             <p>{{ c.description }}</p>
             <p>{{ c.time_create }}</p>
         </li><Br>
-        <button type="button"><a href="{{ c.get_absolute_url }}">Смотреть объявление</a></button>
-        <hr>
+    <button class="more" type="button"><a href="{{ c.get_absolute_url }}">Подробнее</a></button>
+    <hr>
         {% endfor %}
     </ul>
 {% endblock content %}
