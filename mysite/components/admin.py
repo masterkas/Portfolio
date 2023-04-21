@@ -9,11 +9,13 @@ class ComponentsAdmin(admin.ModelAdmin):
     search_fields = ('id', 'description')
     list_editable = ('is_publishes',)
     list_filter = ('is_publishes', 'time_create')
+    prepopulated_fields = {"slug": ("name",)}
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'type_comp')
     list_display_links = ('id', 'type_comp')
     search_fields = ('type_comp',)
+    prepopulated_fields = {"slug": ("type_comp",)}
 
 admin.site.register(Components, ComponentsAdmin)
 admin.site.register(Category, CategoryAdmin)

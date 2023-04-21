@@ -1,0 +1,7 @@
+ {% for c in cats %}
+    {% if c.id == cat_selected %}
+        <li class="sel">{{c.type_comp}}</li>
+    {% else %}
+        <li><a href="{{ c.get_absolute_url }}">{{c.type_comp}}</a></li>
+    {% endif %}
+ {% endfor %}

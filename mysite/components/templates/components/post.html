@@ -1,0 +1,10 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+<h1>{{ post.name }}</h1>
+
+{% if post.photo %}
+<img src="{{ post.photo.url }}">
+{% endif %}
+{% endblock %}
+
