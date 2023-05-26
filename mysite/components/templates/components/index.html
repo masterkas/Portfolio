@@ -10,19 +10,8 @@
             </div>
             <h2>{{ c.name }}</h2>
             {% if c.photo %}
-
-
-
-                <img height="50px" src="{{ c.photo.url }} " alt="images">
-
-
-
+                <img height="60px" src="{{ c.photo.url }} " alt="images">
             {% endif %}
-
-
-
-
-            <p>{{ c.description }}</p>
             <p>{{ c.time_create }}</p>
         </li><Br>
     <button class="more" type="button"><a href="{{ c.get_absolute_url }}">Подробнее</a></button>
@@ -30,4 +19,4 @@
         {% endfor %}
     </ul>
 
-{% endblock content %}
+{% endblock %}
